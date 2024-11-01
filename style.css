@@ -1,0 +1,104 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #2b2b2b;
+  color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.title {
+  color: #ff6f61;
+  font-size: 2em;
+  text-shadow: 2px 2px #000;
+  margin-bottom: 20px;
+}
+
+#game-board {
+  display: grid;
+  gap: 2px;
+  margin-top: 20px;
+}
+
+.cell {
+  width: 30px;
+  height: 30px;
+  background-color: #444;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2em;
+  cursor: pointer;
+  border: 1px solid #333;
+  transition: background-color 0.2s ease, transform 0.1s;
+}
+
+.cell:hover {
+  background-color: #666;
+  transform: scale(1.05);
+}
+
+.cell.revealed {
+  background-color: #808080;
+  color: #333;
+  transform: scale(1);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    background-color: #444;
+  }
+  to {
+    background-color: #808080;
+  }
+}
+
+.cell.mine {
+  background-color: #ff6f61;
+  color: #000;
+  font-size: 1.2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cell.flagged {
+  background-color: #ffeb3b;
+  font-size: 1.2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#message {
+  margin-top: 10px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #ffeb3b;
+}
+
+#custom-settings input {
+  background-color: #333;
+  color: #ffeb3b;
+  border: 1px solid #555;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+button {
+  background-color: #ff6f61;
+  color: #fff;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #ff867c;
+}
